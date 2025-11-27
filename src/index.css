@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- COLORS (Values only for OKLCH composition) --- */
+
+    /* Primary (Teal) */
+    --primary: 0.70 0.20 165;
+    --primary-foreground: 0.98 0.01 180;
+
+    /* Secondary (Dark Blueish) */
+    --secondary: 0.25 0.04 240;
+    --secondary-foreground: 0.90 0.02 180;
+
+    /* Accent */
+    --accent: 0.35 0.08 165;
+    --accent-foreground: 0.98 0.01 180;
+
+    /* Backgrounds */
+    --background: 0.12 0.02 240;
+    --foreground: 0.98 0.01 180;
+
+    /* Cards & Popovers */
+    --card: 0.15 0.03 240;
+    --card-foreground: 0.98 0.01 180;
+    --popover: 0.15 0.03 240;
+    --popover-foreground: 0.98 0.01 180;
+
+    /* UI Elements */
+    --muted: 0.22 0.03 240;
+    --muted-foreground: 0.65 0.02 180;
+    --border: 0.28 0.04 240;
+    --input: 0.28 0.04 240;
+    --ring: 0.70 0.20 165;
+
+    /* Destructive (Red) */
+    --destructive: 0.65 0.22 25;
+    --destructive-foreground: 0.98 0.01 180;
+
+    /* Radius */
+    --radius: 0.75rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
