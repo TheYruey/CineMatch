@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# CineMatch 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CineMatch es una aplicación web moderna para descubrir películas, diseñada para ayudar a los usuarios indecisos a encontrar qué ver basándose en su estado de ánimo, tendencias o búsquedas específicas.
 
-Currently, two official plugins are available:
+## ✨ Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **🔍 Exploración Inteligente:**
+    *   **Tendencias:** Descubre las películas más populares del momento.
+    *   **Filtro por Estado de Ánimo:** Encuentra películas para "Reír", "Llorar", "Adrenalina" o "Pasar Miedo".
+    *   **Búsqueda Avanzada:** Busca por título y filtra por año de lanzamiento.
+*   **♾️ Infinite Scroll Híbrido:** Navegación fluida con carga automática de las primeras páginas y un botón de "Cargar más" para facilitar el acceso al pie de página.
+*   **🎲 Modo Aleatorio:** ¿No te decides? El botón flotante te sugiere una película al azar.
+*   **❤️ Favoritos:** Guarda las películas que quieres ver más tarde (Watchlist).
+*   **🎞️ Detalles Completos (Modal):**
+    *   Sinopsis, calificación y fecha de estreno.
+    *   **Tráiler:** Reproducción integrada de tráilers de YouTube.
+    *   **Streaming:** Consulta dónde ver la película (Netflix, Prime, etc.) en tu región.
+    *   **Reparto:** Carrusel con los actores principales.
+    *   **Similares:** Recomendaciones de películas parecidas con navegación integrada.
+*   **🎨 UI/UX Premium:** Diseño responsivo, animaciones suaves, transiciones elegantes y modo oscuro.
 
-## React Compiler
+## 🛠️ Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Frontend:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+*   **Build Tool:** [Vite](https://vitejs.dev/)
+*   **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Iconos:** [Phosphor Icons](https://phosphoricons.com/)
+*   **API:** [The Movie Database (TMDB)](https://www.themoviedb.org/documentation/api)
+*   **Cliente HTTP:** Axios
 
-## Expanding the ESLint configuration
+## 🚀 Instalación y Uso
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone https://github.com/TheYruey/CineMatch.git
+    cd cinematch
+    ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3.  **Configurar Variables de Entorno:**
+    Crea un archivo `.env` en la raíz del proyecto y añade tu API Key de TMDB:
+    ```env
+    VITE_TMDB_API_KEY=tu_api_key_aqui
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4.  **Iniciar servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+
+5.  **Construir para producción:**
+    ```bash
+    npm run build
+    ```
+
+## 📂 Estructura del Proyecto
+
+```
+src/
+├── components/     # Componentes de UI (MovieCard, MovieModal, Header, etc.)
+├── hooks/          # Custom Hooks (useFavorites, useDebounce, useIntersectionObserver)
+├── services/       # Servicios de API (configuración de Axios y endpoints)
+├── types/          # Definiciones de interfaces TypeScript
+└── App.tsx         # Lógica principal de la aplicación
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🤝 Contribución
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para sugerir cambios o mejoras.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+Desarrollado con ❤️ para los amantes del cine.
